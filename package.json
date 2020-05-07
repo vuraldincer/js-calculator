@@ -1,0 +1,30 @@
+{
+  "name": "js-calculator",
+  "version": "1.0.0",
+  "description": "ES6 Calculator",  
+  "main": "dist/js-calculator.js",
+  "directories": {
+    "example": "example"
+  },  
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "scripts": {
+	"prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuraldincer/js-calculator.git"
+  },
+  "keywords": [
+    "es6",
+    "javascript"
+  ],
+  "author": "Vural Dinçer",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/vuraldincer/js-calculator/issues"
+  },
+  "homepage": "https://github.com/vuraldincer/js-calculator#readme"
+}
