@@ -1,7 +1,7 @@
-
-
+/**
+ * 
+ */
 export default class Exception {
-
 
     constructor(message) {
         this.prototype = Object.create(Error.prototype);
