@@ -27,7 +27,7 @@ export default class Simple extends Calculator {
      * @param {*} first 
      * @param {*} second 
      */
-    operate(op, first, second=0) {
+    operate(op, first=0, second=0) {
         super.operate(op, first, second);
         switch (op) {
             case '+':

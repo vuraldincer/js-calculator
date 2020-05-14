@@ -5,7 +5,7 @@ export default class Calculator {
 
     }    
 
-    operate(op,first,second) {
+    operate(op="",first=0,second=0) {
 
     }
 }
