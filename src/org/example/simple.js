@@ -43,7 +43,7 @@ export default class Simple extends Calculator {
                 this.result = this.operator.divide(first, second);
                 break;       
             case '^2':
-                this.result = this.operator.sqr(first)
+                this.result = this.operator.sqr(first);
 
         }
         return this.result;

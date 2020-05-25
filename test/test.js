@@ -58,12 +58,12 @@ describe('Simple Calculator Operation Test', () => {
     it('the sum of 1 and 2 must be 3', () => {
         let result = calculator.operate(Operator.ADD, 1, 2);
         equal(result, 1 + 2);
-    })
+    });
 
     it('the sum of 2 and 1 must be 3', () => {
         let result = calculator.operate(Operator.ADD, 2, 1);
         equal(result, 2 + 1);
-    })
+    });
 
     it('the difference of 10 and 7 must be 3', () => {
         let result = calculator.operate(Operator.MINUS, 10, 7);

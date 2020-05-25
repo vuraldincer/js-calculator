@@ -1,14 +1,15 @@
 {
   "presets": [
-    [
-      "@babel/preset-env",
+    ["@babel/preset-env",
       {
         "bugfixes": true,
+        "debug": true,
         "loose": true
-      }      
+      }
     ]
   ],
   "plugins": [
     "@babel/plugin-proposal-class-properties"
-  ]
+  ],
+  "env": {}
 }
