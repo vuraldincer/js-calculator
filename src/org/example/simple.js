@@ -11,14 +11,21 @@ export default class Simple extends Calculator {
     /*private*/
     operator = {};
     result = 0.0;
-
+    params = {};
 
     /**
      * 
      */
-    constructor() {
-        super();
-        this.operator = new Operator();
+    constructor(params) {
+        super(params);        
+        this.params = Object.assign({}, this.defaultParams, params);
+        this.init();
+    }
+
+    static create(params) {
+        super.create(params);
+        const _calculator = new Simple(params);
+        return _calculator;
     }
 
     /**
@@ -47,6 +54,14 @@ export default class Simple extends Calculator {
 
         }
         return this.result;
+    }
+
+    init() {
+        this.operator = new Operator();
+    }
+
+    destroy() {
+
     }
 
 }
