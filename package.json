@@ -14,16 +14,14 @@
     "changelog": "conventional-changelog -p js-calculator -i CHANGELOG.md -s",
     "init": "mkdir dist",
     "clean": "rm -rf dist",
-    "prebuild": "npm run clean && npm run init",
-    "pretest": "npm run build",
+    "prebuild": "npm run clean && npm run init",    
     "lint": "npm run lint:js",
     "lint:js": "eslint src test example spec",
     "test": "mocha --recursive ./test --require @babel/register",
     "build": "npm run build:normal && npm run build:terser",
     "build:normal": "npm test && babel src -d dist",
     "build:terser": "terser dist/org/example/*.js -c toplevel,sequences=false,drop_console=true,ecma=2016 -m --mangle-props -o dist/js-calculator.min.js",
-    "version": "is-prerelease || npm run changelog && git add CHANGELOG.md",
-    "prepare": "npm run build"
+    "version": "is-prerelease || npm run changelog && git add CHANGELOG.md"    
   },
   "repository": {
     "type": "git",
