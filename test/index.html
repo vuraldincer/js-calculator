@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>JSCalculator Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <link rel="stylesheet" href="https://unpkg.com/mocha@7.1.2/mocha.css" />
+</head>
+
+<body>
+    <div id="mocha" style="height: 300px;"></div>
+    <div id="container"></div>
+    <script src="https://unpkg.com/core-js@0.4.1/build/core-stable.js"></script>
+    <script src="https://unpkg.com/chai@4.2.0/chai.js"></script>
+    <script src="https://unpkg.com/mocha@7.1.2/mocha.js"></script>
+    <script class="mocha-init">
+        mocha.setup('bdd');
+        mocha.checkLeaks();
+    </script>
+    <script src="../dist/simple.js"></script>
+    <script src="./index.js"></script>
+    <script class="mocha-exec">mocha.run();</script>
+</body>

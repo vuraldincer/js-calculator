@@ -1,15 +1,40 @@
 {
   "presets": [
-    ["@babel/preset-env",
+    [
+      "@babel/preset-env",
       {
+        "modules": "commonjs",
         "bugfixes": true,
         "debug": true,
-        "loose": true
+        "loose": true,
+        "useBuiltIns": "usage",
+        "corejs": 3,
+        "targets": {
+          "esmodules": true
+        }
       }
     ]
   ],
   "plugins": [
-    "@babel/plugin-proposal-class-properties"
+    [
+      "@babel/plugin-proposal-class-properties",
+      {}
+    ],
+    [
+      "@babel/plugin-transform-arrow-functions",
+      {}
+    ],
+    [
+      "@babel/plugin-transform-modules-commonjs",
+      {
+        "allowTopLevelThis": true
+      }
+    ],
+    [
+      "add-module-exports",
+      {}
+    ]
   ],
+  "sourceMaps": "inline",
   "env": {}
 }
