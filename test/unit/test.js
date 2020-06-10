@@ -5,15 +5,15 @@ import { notEqual, equal } from 'assert';
 import { expect } from 'chai';
 import { should } from 'chai';
 
-import Simple from '../src/org/example/simple';
-import Operator from '../src/org/example/operator';
-import Exception from '../src/org/example/exception';
+import Simple from '../../src/org/example/simple';
+import Operator from '../../src/org/example/operator';
+import Exception from '../../src/org/example/exception';
 
 //const should = require('chai').should();
 
 
 before('Setting up Once', function () {
-    // runs once before the first test in this block
+    // runs once before the first test in this block    
 });
 
 after('Teardown Once', function () {
@@ -58,12 +58,12 @@ describe('Simple Calculator Operation Test', () => {
     it('the sum of 1 and 2 must be 3', () => {
         let result = calculator.operate(Operator.ADD, 1, 2);
         equal(result, 1 + 2);
-    })
+    });
 
     it('the sum of 2 and 1 must be 3', () => {
         let result = calculator.operate(Operator.ADD, 2, 1);
         equal(result, 2 + 1);
-    })
+    });
 
     it('the difference of 10 and 7 must be 3', () => {
         let result = calculator.operate(Operator.MINUS, 10, 7);
@@ -80,6 +80,11 @@ describe('Simple Calculator Operation Test', () => {
     it('the difference of -7 and -10 must be -17', () => {
         let result = calculator.operate(Operator.MINUS, -7, -10);
         equal(result, -17);
+    });
+
+    it('calc operators is not undefined not were', () => {
+        let ops = calculator.operator();
+        notEqual(typeof ops, 'undefined');
     });
 
     /**

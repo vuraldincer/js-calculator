@@ -97,8 +97,22 @@ dist
 # FuseBox cache
 .fusebox/
 
+# Webpack cache
+.build_cache/
+
 # DynamoDB Local files
 .dynamodb/
 
 # TernJS port file
 .tern-port
+
+#is a file that stores custom attributes of its containing
+.DS_Store
+
+#some files are always ignored
+._*
+.wafpickle-N
+.npmrc
+*.orig
+.*.swp
+config.gypi

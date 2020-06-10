@@ -9,16 +9,23 @@ import Operator from './operator';
  */
 export default class Simple extends Calculator {
     /*private*/
-    operator = {};
-    result = 0.0;
-
+    _operator = {};
+    _result = 0.0;
+    _params = {};
 
     /**
      * 
      */
-    constructor() {
-        super();
-        this.operator = new Operator();
+    constructor(params) {
+        super(params);
+        this._params = Object.assign({}, this.defaultParams, params);
+        this.init();
+    }
+
+    static create(params) {
+        super.create(params);
+        const _calculator = new Simple(params);
+        return _calculator;
     }
 
     /**
@@ -27,26 +34,46 @@ export default class Simple extends Calculator {
      * @param {*} first 
      * @param {*} second 
      */
-    operate(op, first=0, second=0) {
+    operate(op, first, second = 0) {
         super.operate(op, first, second);
         switch (op) {
             case '+':
-                this.result = this.operator.add(first, second);
+                this._result = this._operator.add(first, second);
                 break;
             case '-':
-                this.result = this.operator.minus(first, second);
+                this._result = this._operator.minus(first, second);
                 break;
             case '*':
-                this.result = this.operator.multiple(first, second);
+                this._result = this._operator.multiple(first, second);
                 break;
             case '/':
-                this.result = this.operator.divide(first, second);
-                break;       
+                this._result = this._operator.divide(first, second);
+                break;
             case '^2':
-                this.result = this.operator.sqr(first)
+                this._result = this._operator.sqr(first);
 
         }
-        return this.result;
+        return this._result;
     }
 
+    /**
+     * 
+     */
+    init() {
+        this._operator = new Operator();
+    }
+
+    /**
+     * 
+     */
+    destroy() {
+
+    }
+    /**
+     * 
+     */
+    operator(){
+        return this._operator;
+    }
+    
 }
