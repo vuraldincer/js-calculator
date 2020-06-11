@@ -20,7 +20,7 @@
     "prebuild": "echo \"Project build started...\" && npm run clean && npm run init",
     "lint": "npm run lint:js",
     "lint:js": "eslint src test example spec",
-    "test": "mocha --recursive ./test/unit/ --require @babel/register",
+    "test": "mocha --recursive ./test/unit/ --require @babel/register --color",
     "build": "npm run lint && npm test && npm run build:main && npm run build:min",
     "build:main": "webpack --aot --config ./build_config/webpack.prod.js",
     "build:min": "webpack --aot --config ./build_config/webpack.prod.min.js",
