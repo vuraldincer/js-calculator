@@ -12,23 +12,26 @@
         "Promise": true,
         "Uint8Array": true,
         "ArrayBuffer": true,
-        "__VERSION__": true,
         "options": true,
         "mangle": true,
         "rename": true,
         "beautify": true,
         "mozilla_ast": true,
-        //"console": false,
-        //"window": false,
-        "global": false
+        "global": false,
+        "console": true,
+        "module": true,
+        "require": true
     },
     "env": {
         "browser": true,
-        "commonjs": true
+        "commonjs": true,
+        "node": true
     },
     "rules": {
         "strict": 0,
-        "semi": "error"
+        "semi": "error",
+        "no-use-before-define": 2, // http://eslint.org/docs/rules/no-use-before-define
+        "no-alert": 1 // http://eslint.org/docs/rules/no-alert
         //"quotes": ["error", "double"]
     },
     "overrides": [
